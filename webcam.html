@@ -1,0 +1,18 @@
+<script src="/js/p5.js" type="text/javascript"></script>
+<script src="/js/p5.dom.js" type="text/javascript"></script>
+<script src="/js/p5.sound.js" type="text/javascript"></script>
+
+<script>
+var capture;
+
+function setup() {
+  createCanvas(600, 600);
+  capture = createCapture(VIDEO);
+  capture.size(600, 600);
+  capture.hide();
+}
+
+function draw() {
+  background(255);
+  image(capture, 0, 0, 600, 600);
+}</script>

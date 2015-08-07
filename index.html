@@ -27,7 +27,6 @@ section {
 
 section.slide {
     padding: 1em; 
-    line-height:0.5em !important;
 }
 
 #follow {
@@ -88,6 +87,7 @@ iframe {
 }
 
 pre {
+    line-height:1em !important;
     font-size: 50%;
     float:right;
 }
@@ -103,7 +103,7 @@ code {
     <img class="left-logo" src="top-left.png"></img> 
     <br style="clear:both" />    
     <div style="padding-top: 2em;">
-        <h2> Processing </h2> 
+        <h2> Processing og p5.js </h2> 
         <p style="margin-bottom:0px;"> Bjørn Fjukstad </p> 
         <p style="font-size:70%; margin-top:0px;"> PhD Student, Dept. of Comp Sci </p> 
         <p style="font-size: 70%"><a
@@ -112,10 +112,41 @@ code {
     <img class="bottom-logo" src="bottom-right.png"></img> 
 </section> 
 
+<section class="slide">
+    <h2> Oversikt  </h2> 
+    
+    <ul>
+        <li>Litt snakk om Processing og p5.js</li>
+        <li>Masse eksempler</li>
+        <li>Oppgaver til dere</li>
+    </ul>
+
+    <p> 
+        Denne presentasjonen finner dere på <a
+            href="http://fjukstad.github.io/processing">fjukstad.github.io/processing</a>
+        og koden til alle eksemplene/oppgavene ligger der. 
+    </p>
+
+</section>
+
+
+<section class="slide">
+    <h2> Processing </h2> 
+
+    <p> Programmeringsspråk som gjør det enkelt å bruke kode til å lage
+        tegninger, animasjoner og interaktiv grafikk 
+    </p> 
+
+    <p> Perfekt for å komme i gang med programmering </p>
+
+    <p> <a href="http://processing.org">processing.org</a> </p> 
+
+</section> 
+
 <section class="slide" id="randomcircles">
-    <a href="randomcircles.html">Random Circles</a></br>
-        <pre>
-        <code class="javascript">
+<a href="randomcircles.html">Random Circles</a></br>
+<pre>
+<code class="javascript">
 function setup(){
     createCanvas(500,500)
 }
@@ -123,15 +154,18 @@ function draw(){
     fill(random(0,255), random(0,255), random(0,255))
     ellipse(random(0,500), random(0,500), 10, 10)
 }
-        </code>
-        </pre>
-        
+</code>
+</pre>
+ 
+
+
+
 </section>
 
 <section class="slide" id="mousetrack">
-    <a href="mousetrack.html">Mousetracker</a> </br> 
-        <pre>
-        <code class="javascript">
+<a href="mousetrack.html">Mousetracker</a> </br> 
+<pre>
+<code class="javascript">
 function setup(){
     createCanvas(500,500)
 }
@@ -145,13 +179,35 @@ function draw(){
        }
     ellipse(mouseX, mouseY, 10,10)
 }
-    </code>
-    </pre>
+</code>
+</pre>
 </section>
 
 
 <section class="slide" id="flocking">
     <a href="flocking.html">Flocking</a> </br> 
+</section>
+
+<section class="slide" id="webcam">
+    <a href="webcam.html">Webcam</a></br>
+<pre>
+<code class="javascript">
+
+var capture;
+
+function setup() {
+  createCanvas(600, 600);
+  capture = createCapture(VIDEO);
+  capture.size(600, 600);
+  capture.hide();
+}
+
+function draw() {
+  background(255);
+  image(capture, 0, 0, 600, 600);
+}
+</code>
+</pre>
 </section>
 
 
@@ -167,6 +223,8 @@ function draw(){
 </section> 
 
 
+
+
 <script src="d3.v3.js"></script>
 <script src="stack.v1.js"></script>
 
@@ -177,7 +235,8 @@ function draw(){
     var demos = [
         "randomcircles",
         "mousetrack",
-        "flocking"
+        "flocking",
+        "webcam"
         ]
     
     var demosIndicies = []; 
@@ -225,13 +284,6 @@ function draw(){
           }
       }
     }
-
-
-
-
-
-
-
 
 
 </script> 
