@@ -1,0 +1,125 @@
+html {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+      Helvetica, Arial, "Lucida Grande", sans-serif;
+      min-width: 500px;
+}
+
+section {
+  background: #fff;
+  color: #000;
+  padding: 1em;
+  min-width: 500px;
+}
+
+section.title , section.thanks {
+    padding: 0em; 
+}
+
+#follow {
+  background: none;
+}
+
+.indicator { 
+    background: #fff;
+    display: none; 
+} 
+
+.grey {
+  color: #777;
+}
+
+a:link,
+a:visited {
+  color: steelblue ;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+img.left-logo{ 
+    max-height: 22%;
+    padding-top: 0em;
+    float:left;
+    transform: translateX(-1em)
+
+}
+
+img.bottom-logo{
+    max-height: 15%; 
+    float: right;
+    padding-right: 1em;
+    transform: translateY(2em);
+}
+
+.main-vis {
+    width: 600px;
+    display: block; 
+  margin-left: auto;
+  margin-right: auto;
+    border-style: solid;
+    border-width: 0px;
+    border-color: #1e1e1e
+}
+
+iframe {
+    border: 0px;
+    height: 600px;
+    width: 600px;
+    display:block;
+    margin-top: 1em;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+.CodeMirror {
+    height: 200px;
+    float: right; 
+    font-size: 12px !important;
+    line-height: 1em;
+}
+
+.cnv_div {
+    width: 600px;
+    display: inline;
+}
+
+.example {
+    display: inline;
+    font-size: 50%; 
+    line-height: 1.25em;
+}
+
+pre {
+    display: inline
+}
+
+
+pre {
+    font-size: 50%;
+    float:right;
+    border-left: 1px solid !important;
+}
+
+code { 
+    background:#fff !important;
+}
+
+textarea {
+    float:right
+}
+
+.edit_space {
+    float:right;
+}
+
+button {
+     background:none!important;
+     border:none; 
+     padding:0!important;
+     font: inherit;
+     /*border is optional*/
+     cursor: pointer;
+     margin-right: 1em;
+}

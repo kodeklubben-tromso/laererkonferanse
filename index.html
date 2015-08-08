@@ -2,15 +2,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 
+<script src="d3.v3.js"></script>
+<script src="stack.v1.js"></script>
+
 <link rel="stylesheet" href="/css/style.css">
 
 <script src="/js/p5.js" type="text/javascript"></script>
 <script src="/js/p5.dom.js" type="text/javascript"></script>
 <script src="/js/p5.sound.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="/css/default.css">
+<!-- <link rel="stylesheet" href="/css/default.css"> 
 <script src="/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>hljs.initHighlightingOnLoad();</script> -->
+
+<script src="js/jquery-2.1.4.js"></script>
+
+<script type="text/javascript" src="/js/render.js"></script>
+<script src="js/ace.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" src="js/prism.js"></script> 
+<link rel="stylesheet" href="css/prism.css" type="text/css"/>
+
 
 
 <section class="title" style="text-align:left;padding-left:1em;">
@@ -63,8 +75,9 @@
 
 <section id="randomcircles">
 <a href="randomcircles.html">Random Circles</a></br>
+<div id="randomcircles-example"> 
 <pre>
-<code class="javascript">
+<code class="language-javascript">
 function setup(){
     createCanvas(500,500)
 }
@@ -74,6 +87,7 @@ function draw(){
 }
 </code>
 </pre>
+</div>
 </section>
 
 
@@ -81,8 +95,9 @@ function draw(){
 
 <section id="mousetrack">
 <a href="mousetrack.html">Mousetracker</a> </br> 
+<div id="mousetrack-example">
 <pre>
-<code class="javascript">
+<code class="language-javascript">
 function setup(){
     createCanvas(500,500)
 }
@@ -98,6 +113,8 @@ function draw(){
 }
 </code>
 </pre>
+</div>
+
 </section>
 
 
@@ -107,9 +124,9 @@ function draw(){
 
 <section  id="webcam">
     <a href="webcam.html">Webcam</a></br>
+<div id="webcam-example">
 <pre>
-<code class="javascript">
-
+<code class="language-javascript">
 var capture;
 
 function setup() {
@@ -125,6 +142,7 @@ function draw() {
 }
 </code>
 </pre>
+</div>
 </section>
 
 
@@ -142,8 +160,6 @@ function draw() {
 
 
 
-<script src="d3.v3.js"></script>
-<script src="stack.v1.js"></script>
 
 
 
@@ -152,7 +168,6 @@ function draw() {
     var demos = [
         "randomcircles",
         "mousetrack",
-        "flocking",
         "webcam"
         ]
     
@@ -186,9 +201,15 @@ function draw() {
       for(var j = 0; j < demosIndicies.length; j++){
           console.log(i, demosIndicies[j])
           if(i === demosIndicies[j]){
-            var visSelect = d3.select('#'+demos[j]);
-            visSelect.append('iframe').attr("src", demos[j]+".html")
-            console.log(visSelect) 
+                $("#"+demos[j]+"-example pre.language-javascript").css("display", "inline") 
+                $("#"+demos[j]+"-example").addClass("example")
+                renderCode()
+          } else {
+            $("#"+demos[j]+"-example pre.language-javascript").css("display", "none") 
+            $("#"+demos[j]+"-example").removeClass("example")
+            $("#"+demos[j]+"-example .edit_space").remove()
+            $("#"+ demos[j] +" .cnv_div").remove()
+
           }
       }
     }
@@ -197,10 +218,25 @@ function draw() {
       if (i === followIndex) mystack.on("scroll.follow", null);
       for(var j = 0; j < demosIndicies.length; j++){
           if(i === demosIndicies[j]){
-           d3.select('#'+demos[j]).select('iframe').remove()
           }
       }
     }
+    
+$("button.edit_button").on("click", function(){
+    console.log("edit", $(this).val()) 
+    if($(this).text() == "run"){
+        $("pre.language-javascript").css("display", "none") 
+        d3.select(window).on("keydown.stack", function(){return;})
+    } else { 
+        $("pre.language-javascript").css("display", "inline") 
+        d3.select(window).on("keydown.stack", stack.keydown)
+    }
+
+})
 
 
+$("button.reset_button").on("click", function(){
+    $("pre.language-javascript").css("display", "inline") 
+})
+    
 </script> 
