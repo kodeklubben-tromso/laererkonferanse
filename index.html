@@ -11,14 +11,9 @@
 <script src="/js/p5.dom.js" type="text/javascript"></script>
 <script src="/js/p5.sound.js" type="text/javascript"></script>
 
-<!-- <link rel="stylesheet" href="/css/default.css"> 
-<script src="/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script> -->
-
 <script src="js/jquery-2.1.4.js"></script>
 
 <script type="text/javascript" src="/js/render.js"></script>
-<script src="js/ace.js" type="text/javascript" charset="utf-8"></script>
 
 <script type="text/javascript" src="js/prism.js"></script> 
 <link rel="stylesheet" href="css/prism.css" type="text/css"/>
@@ -120,6 +115,7 @@ function draw(){
 
 <section id="flocking">
     <a href="flocking.html">Flocking</a> </br> 
+    <iframe src="flocking.html"></iframe>
 </section>
 
 <section  id="webcam">
@@ -175,7 +171,6 @@ function draw() {
 
     var mystack = stack()
         .on("activate", activate)
-        .on("deactivate", deactivate);
 
 
     var section = d3.selectAll("section"),
@@ -204,6 +199,22 @@ function draw() {
                 $("#"+demos[j]+"-example pre.language-javascript").css("display", "inline") 
                 $("#"+demos[j]+"-example").addClass("example")
                 renderCode()
+
+                $("button.edit_button").on("click", function(){
+                    console.log("edit", $(this).val()) 
+                    if($(this).text() == "run"){
+                        $("pre.language-javascript").css("display", "none") 
+                        d3.select(window).on("keydown.stack", function(){return;})
+                    } else { 
+                        $("pre.language-javascript").css("display", "inline") 
+                        d3.select(window).on("keydown.stack", stack.keydown)
+                    }
+                })
+
+                $("button.reset_button").on("click", function(){
+                    $("pre.language-javascript").css("display", "inline") 
+                })
+
           } else {
             $("#"+demos[j]+"-example pre.language-javascript").css("display", "none") 
             $("#"+demos[j]+"-example").removeClass("example")
@@ -213,30 +224,4 @@ function draw() {
           }
       }
     }
-
-    function deactivate(d, i) {
-      if (i === followIndex) mystack.on("scroll.follow", null);
-      for(var j = 0; j < demosIndicies.length; j++){
-          if(i === demosIndicies[j]){
-          }
-      }
-    }
-    
-$("button.edit_button").on("click", function(){
-    console.log("edit", $(this).val()) 
-    if($(this).text() == "run"){
-        $("pre.language-javascript").css("display", "none") 
-        d3.select(window).on("keydown.stack", function(){return;})
-    } else { 
-        $("pre.language-javascript").css("display", "inline") 
-        d3.select(window).on("keydown.stack", stack.keydown)
-    }
-
-})
-
-
-$("button.reset_button").on("click", function(){
-    $("pre.language-javascript").css("display", "inline") 
-})
-    
 </script> 

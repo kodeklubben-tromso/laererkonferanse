@@ -73,13 +73,6 @@ iframe {
 }
 
 
-.CodeMirror {
-    height: 200px;
-    float: right; 
-    font-size: 12px !important;
-    line-height: 1em;
-}
-
 .cnv_div {
     width: 600px;
     display: inline;
