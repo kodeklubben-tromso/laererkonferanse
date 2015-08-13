@@ -1,2 +1,2 @@
-# laererkonferanse
-Lærerkonferanse i Tromsø 2015
+# Lærerkonferanse 2015 Tromsø 
+Her kommer det presentasjoner, materiell fra workshoppene og andre ressurser. 
