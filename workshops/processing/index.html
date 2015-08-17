@@ -37,7 +37,8 @@
     <h2> Oversikt  </h2> 
     
     <ul>
-        <li>Litt snakk om Processing og p5.js</li>
+        <li>Litt snakk om <a href="http://processing.org">Processing</a> og <a
+            href="http://p5js.org/">p5js</a></li>
         <li>Masse eksempler</li>
         <li>Oppgaver til dere</li>
     </ul>
@@ -54,15 +55,99 @@
 <section>
     <h2> Processing </h2> 
 
-    <p> Programmeringsspråk som gjør det enkelt å bruke kode til å lage
+    <p> Programmeringsmiljø som gjør det enkelt å bruke kode til å lage
         tegninger, animasjoner og interaktiv grafikk 
     </p> 
 
-    <p> Perfekt for å komme i gang med programmering </p>
+    <p> Perfekt for å komme i gang med programmering! </p>
 
     <p> <a href="http://processing.org">processing.org</a> </p> 
 
-    http://risd-creative-programming.github.io/fa13-introtocreativeprogramming/examples.html
+</section> 
+
+<section> 
+    <h3>p5.js</h3>
+    
+    <p> JavaScript-bibliotek som tar Processing inn i nettleseren. </p> 
+
+    <p> Lar oss bruke mer enn det vanlige Processing tegnemiljøet </p> 
+
+    <p><a href="http://p5js.org/reference/">p5js.org/reference</a> har masse
+    gode tips og triks </p>
+</section>
+
+
+<section id="circle-rect">
+    <h3> Første tegning </h3>
+    
+<div id="circle-rect-example">
+<pre>
+<code class="language-javascript">
+
+// ellipse(x, y, bredde, høyde)
+ellipse(5, 5, 10, 10);
+
+// rect(x, y, bredde, høyde) 
+rect(20, 20, 40, 40);
+
+</code>
+</pre>
+</div> 
+</section> 
+
+<! --
+
+Vi tegner to figurer. Først en ellipse og så et rektangel. Vi kan se på 
+hvordan funksjonskallet til ellipsen ser ut. Merk at den bruker x og y
+som midtpunkt i ellipsen. Hva skjer om vi bytter bredde og høyde til 100? 
+
+Ok, hva skjer om vi tegner rektangelet først? 
+
+--> 
+
+
+<section id="variables">
+<h3>Variabler </h3>
+<div id="variables-example">
+<pre>
+<code class="language-javascript">
+
+var x = 10;
+var y = 20;
+
+var t = "Hei!"
+
+rect(x, y, width/2, height/2); 
+
+text(t, x, y) 
+
+</code>
+</pre>
+</div> 
+</section> 
+
+
+<section id="setup-draw">
+<h3> Setup og Draw </h3>
+<p> I p5.js bruker vi to funksjoner for å lage programmer. <i>setup</i>
+kjøres én gang når programmet startes, mens <i>draw</i> kjøres hele tida. 
+<div id="setup-draw-example">
+<pre>
+<code class="language-javascript">
+var i = 0; 
+
+function setup(){
+    createCanvas(400,400)
+}
+
+function draw(){
+    background(200)
+    text("Hei " + i, width/2, height/2) 
+    i = i + 1
+}
+</code>
+</pre>
+</div> 
 </section> 
 
 
@@ -74,7 +159,7 @@
 <pre>
 <code class="language-javascript">
 function setup(){
-    createCanvas(500,500)
+    createCanvas(400,400)
 }
 function draw(){
     fill(random(0,255), random(0,255), random(0,255))
@@ -89,7 +174,7 @@ function draw(){
 
 
 <section id="mousetrack">
-    <h3> Følg musa </h3> 
+<h3>Følg musa</h3> 
 <div id="mousetrack-example">
 <pre>
 <code class="language-javascript">
@@ -104,13 +189,35 @@ function draw(){
            fill(255)
            stroke(0)
        }
-    ellipse(mouseX, mouseY, 10,10)
+    ellipse(mouseX, mouseY, 30, 30)
 }
 </code>
 </pre>
 </div>
 
 </section>
+
+
+<section id="sound">
+<h3> Lyd </h3>
+<div id="sound-example">
+<pre>
+<code class="language-javascript">
+var mic;
+function setup(){
+  createCanvas(400,400)
+  mic = new p5.AudioIn()
+  mic.start();
+}
+function draw(){
+  background(0);
+  micLevel = mic.getLevel();
+  ellipse(width/2, constrain(height-micLevel*height*5, 0, height), 30, 30);
+}
+</code>
+</pre>
+</div> 
+</section> 
 
 
 <section id="flocking">
@@ -154,7 +261,20 @@ function draw() {
 </section> 
 
 
+<!--
 
+<section id="HEADER">
+<h3> Header </h3>
+<div id="HEADER-example">
+<pre>
+<code class="language-javascript">
+
+</code>
+</pre>
+</div> 
+</section> 
+
+--> 
 
 
 
@@ -162,8 +282,12 @@ function draw() {
 <script> 
 
     var demos = [
+        "circle-rect",
+        "variables",
+        "setup-draw",
         "randomcircles",
         "mousetrack",
+        "sound",
         "webcam"
         ]
     
