@@ -5,16 +5,15 @@
 <script src="d3.v3.js"></script>
 <script src="stack.v1.js"></script>
 
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="css/style.css">
 
-<script src="/js/p5.js" type="text/javascript"></script>
-<script src="/js/p5.dom.js" type="text/javascript"></script>
-<script src="/js/p5.sound.js" type="text/javascript"></script>
+<script src="js/p5.js" type="text/javascript"></script>
+<script src="js/p5.dom.js" type="text/javascript"></script>
+<script src="js/p5.sound.js" type="text/javascript"></script>
 
 <script src="js/jquery-2.1.4.js"></script>
 
-<script type="text/javascript" src="/js/render.js"></script>
-
+<script type="text/javascript" src="js/render.js"></script>
 <script type="text/javascript" src="js/prism.js"></script> 
 <link rel="stylesheet" href="css/prism.css" type="text/css"/>
 
@@ -37,14 +36,15 @@
     <h2> Oversikt  </h2> 
     
     <ul>
-        <li>Litt snakk om Processing og p5.js</li>
+        <li>Litt snakk om <a href="http://processing.org">Processing</a> og <a
+            href="http://p5js.org/">p5js</a></li>
         <li>Masse eksempler</li>
         <li>Oppgaver til dere</li>
     </ul>
 
     <p> 
         Denne presentasjonen finner dere på <a
-            href="http://fjukstad.github.io/processing">fjukstad.github.io/processing</a>
+            href="http://fjukstad.github.io/laererkonferanse">fjukstad.github.io/laererkonferanse</a>
         og koden til alle eksemplene/oppgavene ligger der. 
     </p>
 
@@ -54,19 +54,71 @@
 <section>
     <h2> Processing </h2> 
 
-    <p> Programmeringsspråk som gjør det enkelt å bruke kode til å lage
+    <p> Programmeringsmiljø som gjør det enkelt å bruke kode til å lage
         tegninger, animasjoner og interaktiv grafikk 
     </p> 
 
-    <p> Perfekt for å komme i gang med programmering </p>
+    <p> Perfekt for å komme i gang med programmering! </p>
 
     <p> <a href="http://processing.org">processing.org</a> </p> 
 
-    http://risd-creative-programming.github.io/fa13-introtocreativeprogramming/examples.html
 </section> 
 
+<section> 
+    <h3>p5.js</h3>
+    
+    <p> JavaScript bibliotek som tar Processing inn i nettleseren </p> 
+
+    <p> Lar oss bruke mer enn det vanlige Processing tegnemiljøet </p> 
+</section>
 
 
+<section id="circle-rect">
+    <h3> Første tegning </h3>
+    
+    <p> Denne tegner to figurer. En ellipse og et rektangel. <p>
+
+    <div id="circle-rect-example">
+    <pre>
+    <code class="language-javascript">
+
+// ellipse(x, y, bredde, høyde)
+ellipse(5, 5, 10, 10);
+
+// rect(x, y, bredde, høyde) 
+rect(20, 20, 40, 40);
+
+    </code>
+    </pre>
+    </div> 
+</section> 
+
+<! --
+
+Vi tegner to figurer. Først en ellipse og så et rektangel. Vi kan se på 
+hvordan funksjonskallet til ellipsen ser ut. Merk at den bruker x og y
+som midtpunkt i ellipsen. Hva skjer om vi bytter bredde og høyde til 100? 
+
+Ok, hva skjer om vi tegner rektangelet først? 
+
+--> 
+
+
+
+<!--
+
+<section>
+    <h3> Header </h3>
+    <div id="HEADER-example">
+    <pre>
+    <code class="language-javascript">
+
+    </code>
+    </pre>
+    </div> 
+</section> 
+
+--> 
 
 <section id="randomcircles">
 <h3> Tilfeldige sirkler </h3> 
@@ -89,7 +141,7 @@ function draw(){
 
 
 <section id="mousetrack">
-<a href="mousetrack.html">Mousetracker</a> </br> 
+<h3>Følg musa</h3> 
 <div id="mousetrack-example">
 <pre>
 <code class="language-javascript">
@@ -111,6 +163,29 @@ function draw(){
 </div>
 
 </section>
+
+
+<section id="sound">
+    <h3> Lyd </h3>
+    <div id="sound-example">
+    <pre>
+    <code class="language-javascript">
+var mic;
+function setup(){
+  mic = new p5.AudioIn()
+  mic.start();
+}
+function draw(){
+  background(0);
+  micLevel = mic.getLevel();
+  ellipse(width/2, constrain(height-micLevel*height*5, 0, height), 10, 10);
+}
+    </code>
+    </pre>
+    </div> 
+</section> 
+
+
 
 
 <section id="flocking">
@@ -162,8 +237,10 @@ function draw() {
 <script> 
 
     var demos = [
+        "circle-rect",
         "randomcircles",
         "mousetrack",
+        "sound",
         "webcam"
         ]
     

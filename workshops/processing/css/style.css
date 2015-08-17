@@ -95,9 +95,11 @@ pre {
     border-left: 1px solid !important;
 }
 
+/*
 code { 
     background:#fff !important;
 }
+*/
 
 textarea {
     float:right
