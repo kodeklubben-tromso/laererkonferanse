@@ -9,5 +9,5 @@ permalink: /workshops/
 - [Lego Mindstorms](lego/) (Astrid Wara)
 
 ## Viderekommende
-- [Processing](processing/) (Bjørn Fjukstad) 
+- [Processing](processing/presentasjon/) (Bjørn Fjukstad) 
 - [Arduino](arduino/) (Hedinn Gunhildrud)
