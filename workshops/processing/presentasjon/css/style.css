@@ -74,7 +74,7 @@ iframe {
 
 
 .cnv_div {
-    width: 600px;
+    width:50%;
     display: inline;
 }
 
@@ -90,9 +90,10 @@ pre {
 
 
 pre {
-    font-size: 50%;
+    font-size: 70%;
     float:right;
     border-left: 1px solid !important;
+    background-image: linear-gradient(transparent 0%, rgba(69, 142, 209, 0.06) 0%) !important
 }
 
 /*
