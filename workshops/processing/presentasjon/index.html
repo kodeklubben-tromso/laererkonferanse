@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" >
 
 <script src="d3.v3.js"></script>
 <script src="stack.v1.js"></script>
@@ -136,7 +136,7 @@ kjøres én gang når programmet startes, mens <i>draw</i> kjøres hele tida.
 var i = 0; 
 
 function setup(){
-    createCanvas(400,400)
+    createCanvas(300,300)
 }
 
 function draw(){
@@ -161,8 +161,14 @@ function setup(){
     createCanvas(400,400)
 }
 function draw(){
-    fill(random(0,255), random(0,255), random(0,255))
-    ellipse(random(0,500), random(0,500), 10, 10)
+    fill(random(0,255),
+         random(0,255),
+         random(0,255))
+
+    ellipse(random(0,500),
+            random(0,500), 
+            10,
+            10)
 }
 </code>
 </pre>
@@ -211,7 +217,9 @@ function setup(){
 function draw(){
   background(0);
   micLevel = mic.getLevel();
-  ellipse(width/2, constrain(height-micLevel*height*5, 0, height), 30, 30);
+  ellipse(width/2,
+          constrain(height-micLevel*height*5, 0, height),
+          30, 30);
 }
 </code>
 </pre>
