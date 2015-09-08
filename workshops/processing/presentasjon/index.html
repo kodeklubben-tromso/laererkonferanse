@@ -158,7 +158,7 @@ function draw(){
 <pre>
 <code class="language-javascript">
 function setup(){
-    createCanvas(400,400)
+    createCanvas(600,400)
 }
 function draw(){
     fill(random(0,255),
@@ -184,7 +184,7 @@ function draw(){
 <pre>
 <code class="language-javascript">
 function setup(){
-    createCanvas(500,500)
+    createCanvas(600, 400)
 }
 function draw(){
    if(mouseIsPressed){
@@ -210,7 +210,7 @@ function draw(){
 <code class="language-javascript">
 var mic;
 function setup(){
-  createCanvas(400,400)
+  createCanvas(600,400)
   mic = new p5.AudioIn()
   mic.start();
 }
@@ -218,8 +218,8 @@ function draw(){
   background(0);
   micLevel = mic.getLevel();
   ellipse(width/2,
-          constrain(height-micLevel*height*5, 0, height),
-          30, 30);
+     constrain(height - micLevel*height*5, 0, height),
+     30, 30);
 }
 </code>
 </pre>
@@ -227,10 +227,8 @@ function draw(){
 </section> 
 
 
-<section id="flocking">
-    <a href="flocking.html">Flocking</a> </br> 
-    <iframe src="flocking.html"></iframe>
-</section>
+
+
 
 <section  id="webcam">
     <a href="webcam.html">Webcam</a></br>
@@ -240,20 +238,62 @@ function draw(){
 var capture;
 
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(400, 400);
   capture = createCapture(VIDEO);
-  capture.size(600, 600);
+  capture.size(400, 400);
   capture.hide();
 }
 
 function draw() {
   background(255);
-  image(capture, 0, 0, 600, 600);
+  image(capture, 0, 0, 400, 400);
 }
 </code>
 </pre>
 </div>
 </section>
+
+
+
+<section id="objects">
+<h3> Objekter </h3>
+<div id="objects-example">
+<pre style="font-size: 90% !important; line-height:1em">
+<code class="language-javascript">
+var bug; 
+function setup(){
+    createCanvas(600,400)
+    bug = new Bug() 
+}
+function draw(){
+    background(255, 150, 150)
+    bug.move()
+    bug.display()
+}
+
+function Bug() {
+    this.x = random(width);
+    this.y = random(height);
+    this.diameter = random(10,30) 
+    this.speed = 1; 
+
+    this.move = function(){
+        this.x += random(-this.speed, this.speed)
+        this.y += random(-this.speed, this.speed)
+    }
+    this.display = function() {
+        ellipse(this.x, this.y, 
+                this.diameter, this.diameter)
+    }
+}
+
+</code>
+</pre>
+</div> 
+</section> 
+
+
+
 
 
 <section class="thanks" style="text-align:center;padding-left:1em;">
@@ -295,7 +335,8 @@ function draw() {
         "randomcircles",
         "mousetrack",
         "sound",
-        "webcam"
+        "webcam",
+        "objects"
         ]
     
     var demosIndicies = []; 
@@ -313,7 +354,6 @@ function draw() {
     for(var i = 0; i < demos.length; i++){
         var visSelect = d3.select('#'+demos[i])
         demosIndicies.push(section[0].indexOf(visSelect.node()))
-        console.log(visSelect,'#'+demos[i]) 
     }
 
 
@@ -325,14 +365,12 @@ function draw() {
       if (i === followIndex) mystack.on("scroll.follow", refollow);
 
       for(var j = 0; j < demosIndicies.length; j++){
-          console.log(i, demosIndicies[j])
           if(i === demosIndicies[j]){
                 $("#"+demos[j]+"-example pre.language-javascript").css("display", "inline") 
                 $("#"+demos[j]+"-example").addClass("example")
                 renderCode()
 
                 $("button.edit_button").on("click", function(){
-                    console.log("edit", $(this).val()) 
                     if($(this).text() == "run"){
                         $("pre.language-javascript").css("display", "none") 
                         d3.select(window).on("keydown.stack", function(){return;})
