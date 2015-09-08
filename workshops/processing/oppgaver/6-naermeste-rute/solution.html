@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="../js/p5.js"></script>
+
+<script>
+
+function setup(){
+    createCanvas(500,500) 
+    background(200) 
+}
+
+function draw(){
+    var numColumns = 8; 
+    var numRows = 8;
+    var cellId = 1;
+
+    var squareHeight = 50;
+    var squareWidth = 50;
+
+    for(var i = 1; i <= numColumns; i++){
+        for(var j = 1; j <= numRows; j++){
+            if((j % 2 == 0) && (i%2 == 0)){
+                fill(0)
+            } else {
+                if((j%2 == 1) && (i%2 == 1)){
+                    fill(0)
+                } else { 
+                    fill(255)
+                }
+            }
+            
+            x = i * squareWidth;
+            y = j * squareHeight;
+
+            if(floor(mouseX/squareWidth) == i) {
+                if(floor(mouseY/squareHeight) == j){
+                    fill(200,15,0)
+                }
+            }
+
+            rect(x, y, squareHeight, squareWidth) 
+        }
+    }
+}
+
+
+</script> 
+
+<p> 
+
+I denne oppgaven skal dere lage funksjonalitet for å kunne fargelegge ruten
+under musepekeren rød. Husk at alle rutene er <i>squareWidth</i> x
+<i>squareHeight</i> store. Koordinatene til musepekeren får dere hentet ut med
+variablene <i>mouseX</i> og <i>mouseY</i>. 
+
+</p> 
