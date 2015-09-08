@@ -1,18 +1,27 @@
 
 
-<script src="/js/p5.js" type="text/javascript"></script>
-<script src="/js/p5.dom.js" type="text/javascript"></script>
-<script src="/js/p5.sound.js" type="text/javascript"></script>
+<script src="js/p5.js" type="text/javascript"></script>
+<script src="js/p5.dom.js" type="text/javascript"></script>
+<script src="js/p5.sound.js" type="text/javascript"></script>
 
 <script> 
 
 var boids = [];
 
 function setup() {
-  createCanvas(600, 600);
+
+    var width = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+
+    var height = window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
+
+  createCanvas(width, height);
 
   // Add an initial set of boids into the system
-  for (var i = 0; i < 100; i++) {
+  for (var i = 0; i < 150; i++) {
     boids[i] = new Boid(random(width), random(height));
   }
 }
@@ -35,6 +44,7 @@ function Boid(x, y) {
   this.r = 3.0;
   this.maxspeed = 3;    // Maximum speed
   this.maxforce = 0.05; // Maximum steering force
+  this.color = color(random(0,255), random(0,255),random(0,255), random(50,200))
 }
 
 Boid.prototype.run = function(boids) {
@@ -90,7 +100,7 @@ Boid.prototype.seek = function(target) {
 
 // Draw boid as a circle
 Boid.prototype.render = function() {
-  fill(127, 127);
+  fill(this.color);
   stroke(200);
   ellipse(this.position.x, this.position.y, 16, 16);
 }

@@ -76,12 +76,16 @@ iframe {
 .cnv_div {
     width:50%;
     display: inline;
+    float: left;
 }
 
 .example {
     display: inline;
-    font-size: 50%; 
+    font-size: 60%; 
     line-height: 1.25em;
+    float:right; 
+    width:49%;
+    padding-left: 1%; 
 }
 
 pre {
@@ -90,20 +94,21 @@ pre {
 
 
 pre {
-    font-size: 70%;
-    float:right;
     border-left: 1px solid !important;
-    background-image: linear-gradient(transparent 0%, rgba(69, 142, 209, 0.06) 0%) !important
+    background-image: linear-gradient(transparent 0%, rgba(255, 255, 255, 0.06) 0%) !important;
+    float: left;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding-right: 2px !important;
 }
 
-/*
 code { 
-    background:#fff !important;
+    max-width: 100%;
 }
-*/
 
 textarea {
-    float:right
+    float:right; 
+    max-width: 70%;
 }
 
 .edit_space {
@@ -118,4 +123,9 @@ button {
      /*border is optional*/
      cursor: pointer;
      margin-right: 1em;
+     float: right !important;
+}
+
+#defaultCanvas { 
+    float: right;
 }
