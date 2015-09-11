@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="../js/p5.js"></script>
+
+<script>
+
+var height; var width; 
+var ball; 
+
+// Her er ballen vår, den har en posisjon diameter og fart. Her bruker
+// vi vektorer for posisjon og fart. 
+function Ball(){
+    this.position = createVector(random(width), 20) 
+    this.color = color(random(0,255)) 
+    this.diameter = random(10,30) 
+    this.speed = createVector(0, random(0,5))  
+
+}
+
+// Metode for å tegne en ball
+Ball.prototype.display = function() {
+    fill(this.color) 
+    ellipse(this.position.x, this.position.y, this.diameter, this.diameter) 
+}
+
+// Metode for å flytte en ball. Denne sjekker også for kollisjon med tak/bunn
+// Bruker litt vektor aritmetikk for å flytte ballen
+Ball.prototype.move = function(){ 
+
+    gravity = createVector(0, 0.1) 
+
+    this.position.add(this.speed) 
+    this.speed.add(gravity)
+
+    if(this.position.y >= height - this.diameter/2){
+
+        // trekker bort litt fart siden den treffer noe 
+        this.speed.sub(createVector(0,2)) 
+            
+        // snur farta i y-retning 
+        this.speed.y = this.speed.y * -1          
+        
+        // setter posisjonen til ballen helt nederst på skjermen, se hva som
+        // skjer hvis du kommenterer ut linja under! 
+        this.position = createVector(this.position.x, height - this.diameter/2)
+    }
+
+    return
+}
+
+// Funksjon som lager en ny ball og venter 500 - 5000 ms før den lager en ny en
+function newBalls(){
+    balls.push(new Ball()); 
+    window.setTimeout(newBalls, random(500, 5000));
+}
+
+function setup(){
+
+    height = 500;
+    width = 500; 
+
+    createCanvas(height, width) 
+        
+    ball = new Ball()
+}
+
+function draw(){
+    background(250,150,250) 
+
+    ball.move()
+    ball.display() 
+}
+
+</script> 
+
+
+<p> 
+Dette er siste oppgave! I denne skal du fullføre det som er den siste, og
+vanskeligste, obligatoriske oppgaven i introduksjonskurset i programmering på
+UiT. Oppgaven er å lage baller som spretter og forsvinner noen sekunder etter de
+har stoppet. I koden har vi laget én ball som spretter mot bakken, men vi
+trenger fler! Oppgaven er
+som følger: 
+<ul>
+ <li>Endre startfarten til ballen slik at den ikke bare har fart i y-retning
+   i (nedover), men også x-retning (høyre/venstre) </li>
+ <li> Legg til støtte for at ballen kan sprette av veggene. </li>
+ <li> Legg til funksjonalitet som fjerner ballen når den har stoppet å sprette.
+ </li> 
+ <li> Lag 10 baller!. Her kan dere bruke arrays for å lagre ballene. </li>
+ <li> <b>EKSTRA</b>: Få ballene til å sprette tilbake når de kolliderer med
+ hverandre. Denne er litt vanskelig, men med god kontroll på litt fysikk bør det
+ gå greit! </li>
+</ul> 
+
+Det er mange gode ressurser på <a href="p5js.org/reference/">p5js.org</a> om
+dere sitter litt fast med p5-koden. 
+
+Lykke til! 
+</p> 

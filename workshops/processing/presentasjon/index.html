@@ -26,7 +26,8 @@
     <div style="padding-top: 2em;">
         <h2> Processing og p5.js </h2> 
         <p style="margin-bottom:0px;"> Bjørn Fjukstad </p> 
-        <p style="font-size:70%; margin-top:0px;"> PhD Student, Dept. of Comp Sci </p> 
+        <p style="font-size:70%; margin-top:0px;"> PhD Student, Institutt for
+        Informatikk </p> 
         <p style="font-size: 70%"><a
             href="mailto:bjorn@cs.uit.no">bjorn@cs.uit.no</a></p>
     </div> 
@@ -277,15 +278,16 @@ function Bug() {
     this.y = random(height);
     this.diameter = random(10,30) 
     this.speed = 1; 
+}
 
-    this.move = function(){
-        this.x += random(-this.speed, this.speed)
-        this.y += random(-this.speed, this.speed)
-    }
-    this.display = function() {
-        ellipse(this.x, this.y, 
-                this.diameter, this.diameter)
-    }
+Bug.prototype.move = function(){
+    this.x += random(-this.speed, this.speed)
+    this.y += random(-this.speed, this.speed)
+}
+
+Bug.prototype.display = function() {
+    ellipse(this.x, this.y, 
+            this.diameter, this.diameter)
 }
 
 </code>
@@ -295,30 +297,32 @@ function Bug() {
 
 
 
-
-
 <section class="thanks" style="text-align:center;padding-left:1em;">
     <img class="left-logo" src="top-left.png"></img> 
     <br style="clear:both" />
     <div style="padding-top: 2em;">
         <h2> Takk!  </h2> 
         <p style="margin-bottom:0px;"> Bjørn Fjukstad </p> 
-        <p style="font-size:70%; margin-top:0px;"> PhD Student, Dept. of Comp Sci </p> 
+        <p style="font-size:70%; margin-top:0px;"> PhD Student, Institutt for
+        Informatikk </p> 
     </div> 
     <img style="transform: translateY(2em);" class="bottom-logo" src="bottom-right.png"></img> 
 </section> 
 
-
-<section> 
+<section>
     <h2> Oppgaver </h2> 
+    
+    <p> 7 oppgaver, regner ikke med at dere blir ferdige med alt </p> 
+
+    <p> Alle oppgavene kommer med litt pre-kode og et løsningsforslag </p> 
 
     <p> Last ned oppgavene <a
-        href="https://github.com/fjukstad/laererkonferanse/releases/download/0.1/oppgaver.zip">her</a></p>
+        href="https://github.com/fjukstad/laererkonferanse/releases/download/1.0/oppgaver.zip">
+        herfra</a>. </p> 
+    
 </section>
 
-
-<!--
-
+<!--- 
 <section id="HEADER">
 <h3> Header </h3>
 <div id="HEADER-example">
