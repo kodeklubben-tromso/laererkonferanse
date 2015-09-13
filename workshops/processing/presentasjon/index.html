@@ -46,7 +46,7 @@
 
     <p> 
         Denne presentasjonen finner dere på <a
-            href="http://fjukstad.github.io/laererkonferanse">fjukstad.github.io/laererkonferanse</a>
+            href="http://kodeklubben-tromso.github.io/laererkonferanse">kodeklubben-tromso.github.io/laererkonferanse</a>
         og koden til alle eksemplene/oppgavene ligger der. 
     </p>
 
@@ -233,7 +233,7 @@ function draw(){
 
 
 <section  id="webcam">
-    <h3> Webcam </h3>
+<h3> Webcam </h3>
 <div id="webcam-example">
 <pre>
 <code class="language-javascript">
@@ -256,6 +256,39 @@ function draw() {
 </section>
 
 
+<section id="instagram">
+<h3> Instagram? </h3>
+<div id="instagram-example">
+<pre>
+<code class="language-javascript">
+var images; 
+function setup(){
+  createCanvas(400,400)
+  frameRate(0.5) 
+ 
+  var url =  "https://api.instagram.com/v1/locations/"
+  url += "328157028" 
+  url += "/media/recent"
+  url += "?client_id=01c16f5b206349839ea20f187d11050f"
+  loadJSON(url, function(data){
+    images = data.data;
+  }, 'jsonp');  
+}    
+
+function draw(){
+  var img = loadImage(
+      images[i].images.low_resolution.url,
+      function(img){
+          image(img, 0, 0) 
+  })
+  i = (i + 1) % images.length
+}
+
+
+</code>
+</pre>
+</div> 
+</section> 
 
 <section id="objects">
 <h3> Objekter </h3>
@@ -316,9 +349,9 @@ Bug.prototype.display = function() {
 
     <p> Alle oppgavene kommer med litt pre-kode og et løsningsforslag </p> 
 
-    <p> Last ned oppgavene <a
-        href="https://github.com/fjukstad/laererkonferanse/releases/download/1.0/oppgaver.zip">
-        herfra</a>. </p> 
+    <p> Oppgavene ligger på <a
+        href="http://kodeklubben-tromso.github.io/">
+        kodeklubben-tromso.github.io</a> </p> 
     
 </section>
 
@@ -349,6 +382,7 @@ Bug.prototype.display = function() {
         "mousetrack",
         "sound",
         "webcam",
+        "instagram",
         "objects"
         ]
     
