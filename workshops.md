@@ -6,7 +6,7 @@ permalink: /workshops/
 
 ## Nybegynnere
 - [Scratch](scratch/) (Stian Hansen)
-- [Lego Mindstorms](lego/) (Astrid Wara)
+- [Lego Mindstorms](lego/) (Ole Morten Mortensen)
 
 ## Viderekommende
 - [Processing](processing/presentasjon/) (Bjørn Fjukstad) 

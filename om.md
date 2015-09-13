@@ -57,6 +57,6 @@ lære av andre og reise hjem igjen fulle av ideer og nye bekjentskaper.
     - Viderekommende: Processing (Bjørn Fjukstad fra Informatikk) på PC-laben Informatikk
 - **13:30**  Vi går til Vitensenteret. Mingling med kaffe/te og vafler eller kake på Vitensenteret
 - **14:00**  Workshops del 2 på Vitensenteret
-    - Nybegynnere: Lego Mindstorms (XXX fra First Scandinavia)
+    - Nybegynnere: Lego Mindstorms (Ole Morten Mortensen fra First Scandinavia)
     - Viderekommende: Arduino (Hedinn Gunhildrud fra Vitensenteret)
 - **15:30** Oppsummering og avslutning
