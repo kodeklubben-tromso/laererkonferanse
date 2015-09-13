@@ -12,7 +12,8 @@ underveis. Hvert foredrag blir på ca. 20 minutt.
 Foredragsholdere: 
 
 - **Tjerand Silde** - Lær Kidsa Koding
-- **Bjørn Fjukstad**, ph.d. student informatikk - Lær Kidsa Koding i Tromsø
+- **Bjørn Fjukstad**, ph.d. student informatikk - [Kodeklubben
+  Tromsø](https://github.com/kodeklubben-tromso/laererkonferanse/raw/master/presentasjoner/kodeklubben-troms%C3%B8.pdf)
 - **Susanne Iversen** - Koding som digital grublis - En kvalitativ studie om hvordan elevenes læringsstrategier påvirkes gjennom programmering.
 - **Kim Daniel Arthur** - Fra Playfish til Superplus.
 - **Henriette Myrlund** - Framverk, Bedriftsnettverket for spill og interaktive produksjoner.
