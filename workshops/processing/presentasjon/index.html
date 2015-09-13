@@ -419,23 +419,26 @@ Bug.prototype.display = function() {
 
                 $("button.edit_button").on("click", function(){
                     if($(this).text() == "run"){
-                        $("pre.language-javascript").css("display", "none") 
+                        console.log("#"+demos[j]) 
+                        $("div.example pre.language-javascript").css("display", "none") 
                         d3.select(window).on("keydown.stack", function(){return;})
                     } else { 
-                        $("pre.language-javascript").css("display", "inline") 
+                        console.log("#"+demos[j]) 
+                        $("div.example pre.language-javascript").css("display", "inline") 
                         d3.select(window).on("keydown.stack", stack.keydown)
                     }
                 })
 
                 $("button.reset_button").on("click", function(){
-                    $("pre.language-javascript").css("display", "inline") 
+                    $("div.example pre.language-javascript").css("display", "inline") 
                 })
 
           } else {
-            $("#"+demos[j]+"-example pre.language-javascript").css("display", "none") 
-            $("#"+demos[j]+"-example").removeClass("example")
-            $("#"+demos[j]+"-example .edit_space").remove()
-            $("#"+ demos[j] +" .cnv_div").remove()
+
+            $("#"+demos[j] + "-example pre.language-javascript").css("display", "none") 
+            $("#"+demos[j] + "-example").removeClass("example")
+            $("#"+demos[j] + "-example .edit_space").remove()
+            $("#"+ demos[j] + " .cnv_div").remove()
 
           }
       }
