@@ -12,9 +12,9 @@ underveis. Hvert foredrag blir på ca. 20 minutt.
 Foredragsholdere: 
 
 - **Tjerand Silde** - Lær Kidsa Koding
+- **Stian Hansen fra Superplus og Bjørn Fjukstad** - [Intro til koding og forskjellige teknologier](https://github.com/kodeklubben-tromso/laererkonferanse/raw/master/presentasjoner/teknologier.pdf)
+- **Susanne Iversen** - Koding som digital grublis - En kvalitativ studie om hvordan elevenes læringsstrategier påvirkes gjennom programmering.
+- **Henriette Myrlund** - Framverk, Bedriftsnettverket for spill og interaktive produksjoner.
+- **Kim Daniel Arthur** - Fra Playfish til Superplus.
 - **Bjørn Fjukstad**, ph.d. student informatikk - [Kodeklubben
   Tromsø](https://github.com/kodeklubben-tromso/laererkonferanse/raw/master/presentasjoner/kodeklubben-troms%C3%B8.pdf)
-- **Susanne Iversen** - Koding som digital grublis - En kvalitativ studie om hvordan elevenes læringsstrategier påvirkes gjennom programmering.
-- **Kim Daniel Arthur** - Fra Playfish til Superplus.
-- **Henriette Myrlund** - Framverk, Bedriftsnettverket for spill og interaktive produksjoner.
-- **Stian Hansen**, fra Superplus og Bjørn Fjukstad - Intro til koding og forskjellige teknologier
