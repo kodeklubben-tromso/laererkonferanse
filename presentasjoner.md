@@ -11,7 +11,7 @@ underveis. Hvert foredrag blir på ca. 20 minutt.
 
 Foredragsholdere: 
 
-- **Tjerand Silde** - Lær Kidsa Koding
+- **Tjerand Silde** - [Lær Kidsa Koding](https://github.com/kodeklubben-tromso/laererkonferanse/raw/master/presentasjoner/LKK.pdf)
 - **Stian Hansen fra Superplus og Bjørn Fjukstad** - [Intro til koding og forskjellige teknologier](https://github.com/kodeklubben-tromso/laererkonferanse/raw/master/presentasjoner/teknologier.pdf)
 - **Susanne Iversen** - Koding som digital grublis - En kvalitativ studie om hvordan elevenes læringsstrategier påvirkes gjennom programmering.
 - **Henriette Myrlund** - Framverk, Bedriftsnettverket for spill og interaktive produksjoner.

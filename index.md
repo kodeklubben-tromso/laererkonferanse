@@ -2,7 +2,5 @@
 layout: default
 ---
 
-Denne siden inneholder kursmateriell og presentasjoner til Lærerkonferansen 2015
-i Tromsø. 
-
+Takk til alle som deltok på Lærerkonferansen i Tromsø 14. september 2015! 
 
