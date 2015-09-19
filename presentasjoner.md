@@ -13,7 +13,7 @@ Foredragsholdere:
 
 - **Tjerand Silde** - [Lær Kidsa Koding](https://github.com/kodeklubben-tromso/laererkonferanse/raw/master/presentasjoner/LKK.pdf)
 - **Stian Hansen fra Superplus og Bjørn Fjukstad** - [Intro til koding og forskjellige teknologier](https://github.com/kodeklubben-tromso/laererkonferanse/raw/master/presentasjoner/teknologier.pdf)
-- **Susanne Iversen** - Koding som digital grublis - En kvalitativ studie om hvordan elevenes læringsstrategier påvirkes gjennom programmering.
+- **Susanne Iversen** - [Koding som digital grublis - En kvalitativ studie om hvordan elevenes læringsstrategier påvirkes gjennom programmering.](https://github.com/kodeklubben-tromso/laererkonferanse/raw/master/presentasjoner/digital-grublis.pdf)
 - **Henriette Myrlund** - Framverk, Bedriftsnettverket for spill og interaktive produksjoner.
 - **Kim Daniel Arthur** - Fra Playfish til Superplus.
 - **Bjørn Fjukstad**, ph.d. student informatikk - [Kodeklubben
