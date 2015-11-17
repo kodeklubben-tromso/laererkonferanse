@@ -10,5 +10,5 @@ permalink: /workshops/
 
 ## Viderekommende
 - [Processing](processing/presentasjon/) (Bjørn Fjukstad) 
-    - [Oppgaver](https://github.com/kodeklubben-tromso/laererkonferanse/releases/download/1.0/oppgaver.zip)
+    - [Oppgaver](https://github.com/kodeklubben-tromso/laererkonferanse/releases/download/1.0/oppgaver-p5-editor.zip)
 - [Arduino](https://github.com/kodeklubben-tromso/laererkonferanse/raw/master/workshops/arduino/arduino-workshop.pdf) (Hedinn Gunhildrud)
